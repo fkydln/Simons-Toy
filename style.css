@@ -17,6 +17,7 @@ h1 {
 button {
   padding: 10px;
   border-radius: 10px;
+  background: white;
 }
 
 #gameButtonArea > button {
