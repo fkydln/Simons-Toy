@@ -60,6 +60,7 @@ function startGame() {
       )
       stopTone();
       stopGame();
+      secToPrint = 40;
       clearInterval(timer);
     }  
     if (gamePlaying === false) {
@@ -72,6 +73,7 @@ function startGame() {
 
 function stopGame() {
   clearInterval(timer);
+  
   gamePlaying = false;
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
@@ -146,6 +148,8 @@ function playClueSequence() {
 }
 function loseGame() {
   stopGame();
+  secToPrint = 41;
+  
   alert("Game Over. You lost.");
 }
 function winGame() {
