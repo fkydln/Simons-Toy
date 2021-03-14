@@ -20,6 +20,26 @@ var volume = 0.5;
 var guessCounter = 0;
 var secToPrint = 40; // how many seconds of the game you allow
 
+function disable() {
+  //disable buttons, so user can't click while clue-play
+  document.getElementById("button1").classList.add("disabled");
+  document.getElementById("button2").classList.add("disabled");
+  document.getElementById("button3").classList.add("disabled");
+  document.getElementById("button4").classList.add("disabled");
+  document.getElementById("button5").classList.add("disabled");
+  document.getElementById("button6").classList.add("disabled");
+}
+
+//enable buttons, so user can click after clue-play is done.
+function enable() {
+
+  document.getElementById("button1").classList.remove("disabled");
+  document.getElementById("button2").classList.remove("disabled");
+  document.getElementById("button3").classList.remove("disabled");
+  document.getElementById("button4").classList.remove("disabled");
+  document.getElementById("button5").classList.remove("disabled");
+  document.getElementById("button6").classList.remove("disabled");
+}
 
 
 
@@ -33,7 +53,10 @@ function startGame() {
   //swap the Start and Stop buttons:
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
+  
   playClueSequence();
+  
+  
   var timer = setInterval(() => {
     secToPrint = secToPrint -1;
     var displayTime = document.getElementById("timer").innerHTML = `Time: ` + secToPrint;
@@ -67,7 +90,6 @@ function startGame() {
       clearInterval(timer);
     }
   }, 1000);
-    
 
 }
 
@@ -122,6 +144,8 @@ o.start(0);
 
 function lightButton(btn) {
   document.getElementById("button" + btn).classList.add("lit");
+ 
+
 }
 function clearButton(btn) {
   document.getElementById("button" + btn).classList.remove("lit");
@@ -132,9 +156,12 @@ function playSingleClue(btn) {
     lightButton(btn);
     playTone(btn, clueHoldTime);
     setTimeout(clearButton, clueHoldTime, btn);
+
   }
+
 }
 function playClueSequence() {
+
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
   for (let i = 0; i <= progress; i++) {
@@ -145,6 +172,7 @@ function playClueSequence() {
     delay += cluePauseTime;
     clueHoldTime = clueHoldTime - 20;
   }
+  
 }
 function loseGame() {
   stopGame();
@@ -198,4 +226,3 @@ function getRandomValue(min, max) {
   return Math.floor(Math.random() * (max - min) + min); //max exclusive, min inclusive.
 }
 
-console.log(getRandomValue(1, 6));

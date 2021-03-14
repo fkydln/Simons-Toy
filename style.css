@@ -84,6 +84,14 @@ button {
 .white {
   color: white;
 }
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 @media only screen and (max-width: 420px) {
   #gameButtonArea > button {
