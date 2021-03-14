@@ -12,7 +12,7 @@ body {
 h1 {
   font-family: verdana, arial, sans-serif;
   font-style: italic;
-  color: #2c32ec;
+  color: #def31f;
 }
 button {
   padding: 10px;
@@ -115,7 +115,7 @@ button {
     margin: 2px;
   }
   #features {
-    background-color: rgb(197, 87, 107);
+    background-color: #c5576b;
     background-image: url(./notebook.png);
     display: flex;
     flex-direction: column;
