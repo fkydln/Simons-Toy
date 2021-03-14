@@ -68,6 +68,15 @@ button {
 #button6.lit {
   background: purple;
 }
+.green {
+  color: greenyellow;
+}
+.red {
+  color: red;
+}
+.white {
+  color: white;
+}
 
 @media only screen and (max-width: 420px) {
   #gameButtonArea > button {

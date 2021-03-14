@@ -18,6 +18,11 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;
 var guessCounter = 0;
+var secToPrint = 40; // how many seconds of the game you allow
+
+
+
+
 
 function startGame() {
   //initiazlize game variables;
@@ -29,12 +34,50 @@ function startGame() {
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
+  var timer = setInterval(() => {
+    secToPrint = secToPrint -1;
+    var displayTime = document.getElementById("timer").innerHTML = `Time: ` + secToPrint;
+    
+    if (secToPrint % 2 === 0 && secToPrint <= 20) {
+      console.log("Kirmizi.");
+      document.getElementById("timer").classList.remove("green" , "white");
+      document.getElementById("timer").classList.add("red");
+    }
+    else if (secToPrint % 2 === 1 && secToPrint <= 20) {
+      console.log("beyaz.");
+      document.getElementById("timer").classList.remove("red", "green");
+      document.getElementById("timer").classList.add("white");
+  
+    }
+    else{
+      document.getElementById("timer").classList.remove("red", "white");
+      document.getElementById("timer").classList.add("green");
+    }
+    
+    if (secToPrint === 0) {
+      alert(
+        "Time is over!"
+      )
+      stopTone();
+      stopGame();
+      secToPrint = 40;
+      clearInterval(timer);
+    }  
+    if (gamePlaying === false) {
+      clearInterval(timer);
+    }
+  }, 1000);
+    
+
 }
 
 function stopGame() {
+  clearInterval(timer);
+  
   gamePlaying = false;
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
+  
 }
 
 // Sound Synthesis Functions
@@ -64,6 +107,7 @@ function startTone(btn) {
 function stopTone() {
   g.gain.setTargetAtTime(0, context.currentTime + 0.05, 0.025);
   tonePlaying = false;
+
 }
 
 //Page Initialization
@@ -104,6 +148,8 @@ function playClueSequence() {
 }
 function loseGame() {
   stopGame();
+  secToPrint = 41;
+  
   alert("Game Over. You lost.");
 }
 function winGame() {

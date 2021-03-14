@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hello!</title>
+    <title>Simon's Toy</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="./style.css" />
@@ -16,9 +16,12 @@
   <body>
     <h1>Simon's Toy!</h1>
 
-    <p>Welcome to the Game! Repeat back the pattern by pressing buttons!</p>
+    <p>Watch, Remember, Repeat!</p>
     <button id="startBtn" onclick="startGame()">Start</button>
     <button id="stopBtn" class="hidden" onclick="stopGame()">Stop</button>
+    <div id="statusBar">
+      <h2 id="timer" class="green">Time: 40</h2>
+    </div>
 
     <div id="gameButtonArea">
       <button
