@@ -113,6 +113,16 @@ button {
     height: 100px;
     margin: 2px;
   }
+  #features {
+    background-color: rgb(197, 87, 107);
+    background-image: url(./notebook.png);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5%;
+    width: 80%;
+    padding: 1%;
+  }
 }
 
 @media only screen and (max-width: 420px) {
