@@ -55,7 +55,7 @@ function startGame() {
   document.getElementById("stopBtn").classList.remove("hidden");
   
   playClueSequence();
-  
+
   
   var timer = setInterval(() => {
     secToPrint = secToPrint -1;
@@ -111,10 +111,14 @@ const freqMap = {
   5: 400.1,
   6: 440.1
 };
+
+
+
 function playTone(btn, len) {
   o.frequency.value = freqMap[btn];
   g.gain.setTargetAtTime(volume, context.currentTime + 0.05, 0.025);
   tonePlaying = true;
+  
   setTimeout(function() {
     stopTone();
   }, len);
@@ -165,6 +169,7 @@ function playClueSequence() {
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
   for (let i = 0; i <= progress; i++) {
+    disable();
     // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms");
     setTimeout(playSingleClue, delay, pattern[i]); // set a timeout to play that clue
@@ -172,6 +177,9 @@ function playClueSequence() {
     delay += cluePauseTime;
     clueHoldTime = clueHoldTime - 20;
   }
+  setTimeout(() => {
+    enable();
+  }, delay + clueHoldTime);
   
 }
 function loseGame() {
