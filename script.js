@@ -11,7 +11,7 @@ var pattern = [
   getRandomValue(1, 6),
   getRandomValue(1, 6),
   getRandomValue(1, 6),
-  getRandomValue(1, 6)
+  getRandomValue(1, 6),
 ];
 var progress = 0;
 var gamePlaying = false;
@@ -32,7 +32,6 @@ function disable() {
 
 //enable buttons, so user can click after clue-play is done.
 function enable() {
-
   document.getElementById("button1").classList.remove("disabled");
   document.getElementById("button2").classList.remove("disabled");
   document.getElementById("button3").classList.remove("disabled");
@@ -41,11 +40,8 @@ function enable() {
   document.getElementById("button6").classList.remove("disabled");
 }
 
-
-
-
 function startGame() {
-  //initiazlize game variables;
+  //initialize game variables;
   numberOfMistakes = 3;
   progress = 0;
   gamePlaying = true;
@@ -53,53 +49,46 @@ function startGame() {
   //swap the Start and Stop buttons:
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
-  
+
   playClueSequence();
 
-  
   var timer = setInterval(() => {
-    secToPrint = secToPrint -1;
-    var displayTime = document.getElementById("timer").innerHTML = `Time: ` + secToPrint;
-    
+    secToPrint = secToPrint - 1;
+    var displayTime = (document.getElementById("timer").innerHTML =
+      `Time: ` + secToPrint);
+
     if (secToPrint % 2 === 0 && secToPrint <= 20) {
       console.log("Kirmizi.");
-      document.getElementById("timer").classList.remove("green" , "white");
+      document.getElementById("timer").classList.remove("green", "white");
       document.getElementById("timer").classList.add("red");
-    }
-    else if (secToPrint % 2 === 1 && secToPrint <= 20) {
+    } else if (secToPrint % 2 === 1 && secToPrint <= 20) {
       console.log("beyaz.");
       document.getElementById("timer").classList.remove("red", "green");
       document.getElementById("timer").classList.add("white");
-  
-    }
-    else{
+    } else {
       document.getElementById("timer").classList.remove("red", "white");
       document.getElementById("timer").classList.add("green");
     }
-    
+
     if (secToPrint === 0) {
-      alert(
-        "Time is over!"
-      )
+      alert("Time is over!");
       stopTone();
       stopGame();
       secToPrint = 40;
       clearInterval(timer);
-    }  
+    }
     if (gamePlaying === false) {
       clearInterval(timer);
     }
   }, 1000);
-
 }
 
 function stopGame() {
   clearInterval(timer);
-  
+
   gamePlaying = false;
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
-  
 }
 
 // Sound Synthesis Functions
@@ -109,17 +98,15 @@ const freqMap = {
   3: 320,
   4: 340.2,
   5: 400.1,
-  6: 440.1
+  6: 440.1,
 };
-
-
 
 function playTone(btn, len) {
   o.frequency.value = freqMap[btn];
   g.gain.setTargetAtTime(volume, context.currentTime + 0.05, 0.025);
   tonePlaying = true;
-  
-  setTimeout(function() {
+
+  setTimeout(function () {
     stopTone();
   }, len);
 }
@@ -133,7 +120,6 @@ function startTone(btn) {
 function stopTone() {
   g.gain.setTargetAtTime(0, context.currentTime + 0.05, 0.025);
   tonePlaying = false;
-
 }
 
 //Page Initialization
@@ -148,8 +134,6 @@ o.start(0);
 
 function lightButton(btn) {
   document.getElementById("button" + btn).classList.add("lit");
- 
-
 }
 function clearButton(btn) {
   document.getElementById("button" + btn).classList.remove("lit");
@@ -160,12 +144,9 @@ function playSingleClue(btn) {
     lightButton(btn);
     playTone(btn, clueHoldTime);
     setTimeout(clearButton, clueHoldTime, btn);
-
   }
-
 }
 function playClueSequence() {
-
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
   for (let i = 0; i <= progress; i++) {
@@ -180,12 +161,11 @@ function playClueSequence() {
   setTimeout(() => {
     enable();
   }, delay + clueHoldTime);
-  
 }
 function loseGame() {
   stopGame();
   secToPrint = 41;
-  
+
   alert("Game Over. You lost.");
 }
 function winGame() {
@@ -194,8 +174,9 @@ function winGame() {
 }
 function guess(btn) {
   console.log("user guessed: " + btn);
-  if (!gamePlaying) { //if no game playing, it'll return out of this func.
-    return  ;
+  if (!gamePlaying) {
+    //if no game playing, it'll return out of this func.
+    return;
   }
 
   //Game logic:
@@ -215,12 +196,11 @@ function guess(btn) {
       //check the next guess!
       guessCounter++;
     }
-  } else if(numberOfMistakes === 1){
+  } else if (numberOfMistakes === 1) {
     //Wrong Guess, you're out!
     //Game over, you lost!
     loseGame();
-  }
-  else{
+  } else {
     //you lost a strike.
     numberOfMistakes--;
     alert(numberOfMistakes + " Strikes Left!");
@@ -233,4 +213,3 @@ function getRandomValue(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //max exclusive, min inclusive.
 }
-
