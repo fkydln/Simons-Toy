@@ -77,7 +77,7 @@ button {
   background-image: url(./food.png);
 }
 .green {
-  color: greenyellow;
+  color: rgb(141, 255, 131);
 }
 .red {
   color: red;
