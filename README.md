@@ -42,7 +42,10 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![x](your-link-here)
+
+- [x] <img src="./walk-thru.gif" width=720><br>
+
+- [x] <img src="./mobile-view.gif" width=720><br>
 
 ## Reflection Questions
 

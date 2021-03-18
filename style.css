@@ -108,10 +108,28 @@ button {
   padding: 1%;
 }
 
+@media only screen and (max-width: 780px) {
+  #gameButtonArea > button {
+    width: 180px;
+    height: 180px;
+    margin: 2px;
+  }
+  #features {
+    background-color: #c5576b;
+    background-image: url(./notebook.png);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5%;
+    width: 60%;
+    padding: 1%;
+  }
+}
+
 @media only screen and (max-width: 420px) {
   #gameButtonArea > button {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 2px;
   }
   #features {
@@ -123,13 +141,5 @@ button {
     margin-top: 5%;
     width: 80%;
     padding: 1%;
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  #gameButtonArea > button {
-    width: 120px;
-    height: 120px;
-    margin: 2px;
   }
 }
