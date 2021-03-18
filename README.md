@@ -45,7 +45,7 @@ Here's a walkthrough of implemented user stories:
 
 - [x] <img src="./walk-thru.gif" width=720><br>
 
-- [x] <img src="./walk-thru2.gif" width=720><br>
+- [x] <img src="./mobile-view.gif" width=720><br>
 
 ## Reflection Questions
 
