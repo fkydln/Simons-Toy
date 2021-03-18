@@ -42,25 +42,26 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![](your-link-here)
+![x](your-link-here)
 
 ## Reflection Questions
 
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
-   [YOUR ANSWER HERE]
+   https://developer.mozilla.org
+   https://www.w3schools.com/
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words)
-   [YOUR ANSWER HERE]
+   Firstly, I didn't spend much time creating the HTML and CSS because I had enough knowledge to do that. So, I think creating the algorithm is the most challenging part. I got stuck on the optional features such as giving the user three strikes and making the blinking timer. However, after I've written the pseudo-code on my actual notebook, I could see the order that my code was supposed to be. Then I typed it on my computer. More specifically, creating the blinking timer and the click-block during clue play consumed a decent amount of time. There was more than a way to have them work. I have created new variables and functions. Then I run for loops and DOM(Document Object Model) in there. I looked up some of the use of syntaxes in JavaScript from MDN(Mozilla Developer Network).
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words)
-   [YOUR ANSWER HERE]
+   I am wondering if I could make this website/web app work on an iPhone. Because I know how to make a responsive website a bit, and I made it work on mobile devices. It works ok on android (play-tone cuts too quick) but not at all on iPhone. Buttons don't pop-up back. So I'd like to make it work for all platforms, so all of the clients can access the website.
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words)
-   [YOUR ANSWER HERE]
+   I would convert some of the DOM HTML collections to NodeLists. Because it becomes an array, so your code gets shorter while keeping the same efficiency. I also would like to work on audio clips to add them on the playing buttons. Finally, I would definitely make an input panel, so the user will be able to choose how many buttons to be there, how long the clue-play is. So, it will determine the hardness of the game.
 
 ## License
 
-    Copyright [YOUR NAME]
+    Copyright Mehmet Fazil Kayadelen
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
