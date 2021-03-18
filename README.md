@@ -6,7 +6,7 @@ Submitted by: **Mehmet Fazil Kayadelen**
 
 Time spent: **5** hours spent in total
 
-Link to project: (insert your link here, should start with https://glitch.com...)
+Link to project: (insert your link here, should start with https://glitch.com/edit/#!/simons-toy)
 
 ## Required Functionality
 
