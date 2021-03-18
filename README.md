@@ -42,7 +42,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-![x](<img src"./walk-thru.gif" width=450><br>)
+![x] <img src="./walk-thru.gif" width=450><br>
 
 ## Reflection Questions
 
