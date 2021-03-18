@@ -43,7 +43,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-- [x] <img src="./walk-thru.gif" width=450><br>
+- [x] <img src="./walk-thru.gif" width=720><br>
 
 ## Reflection Questions
 
