@@ -45,6 +45,8 @@ Here's a walkthrough of implemented user stories:
 
 - [x] <img src="./walk-thru.gif" width=720><br>
 
+- [x] <img src="./walk-thru2.gif" width=720><br>
+
 ## Reflection Questions
 
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
